@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 
-class App extends Component {
+// class App extends Component {
+// or
+class App extends React.Component {
   constructor() {
-    super();
+    super(); // calls Reac.Component's constructor
     this.state = {
       monsters: [
         { name: 'Frankenstein', id: 'asr01' },
