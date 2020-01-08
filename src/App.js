@@ -1,15 +1,12 @@
-// import React, { Component } from 'react';
-import React from 'react';
+import React, { Component } from 'react';
 
 import { CardList } from './components/card-list/card-list.component';
 
 import './App.css';
 
-// class App extends Component {
-// or
-class App extends React.Component {
+class App extends Component {
   constructor() {
-    super(); // calls Reac.Component's constructor
+    super();
     this.state = {
       monsters: []
     };
@@ -24,11 +21,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <CardList>
-          {this.state.monsters.map(monster => {
-            return <h1 key={monster.id}>{monster.name}</h1>;
-          })}
-        </CardList>
+        <CardList monsters={this.state.monsters} />
       </div>
     );
   }
