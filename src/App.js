@@ -20,12 +20,11 @@ class App extends Component {
   }
 
   render() {
-    const filteredMonsters = this.state.monsters.filter(monster => {
-      // return monster.name.toLowerCase().match(
-      return monster.name.toLowerCase().includes(
-        this.state.searchField.toLowerCase()
-      );
-    });
+    const { monsters, searchField } = this.state;
+    const filteredMonsters = monsters.filter(monster => (
+      // return monster.name.toLowerCase().match
+      monster.name.toLowerCase().includes(searchField.toLowerCase())
+    ));
     return (
       <div className="App">
         <input
