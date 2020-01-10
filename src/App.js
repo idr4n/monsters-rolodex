@@ -20,10 +20,6 @@ class App extends Component {
       .then(users => this.setState({ monsters: users }));
   }
 
-  searchMonster = value => {
-    this.setState({ searchField: value });
-  };
-
   render() {
     const { monsters, searchField } = this.state;
     const filteredMonsters = monsters.filter(monster =>
@@ -31,7 +27,10 @@ class App extends Component {
     );
     return (
       <div className="App">
-        <SearchBox searchMonster={this.searchMonster} />
+        <SearchBox
+          placeHolder="search monsters"
+          handleChange={e => this.setState({ searchField: e.target.value })}
+        />
         <CardList monsters={filteredMonsters} />
       </div>
     );
